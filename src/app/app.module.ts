@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PessoasModule } from './pessoas/pessoas.module';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
 
     CoreModule,
+    DashboardModule,
     LancamentosModule,
     PessoasModule,
     AppRoutingModule

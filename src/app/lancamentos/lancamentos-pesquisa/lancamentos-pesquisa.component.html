@@ -39,7 +39,7 @@
           (onLazyLoad)="aoMudarPagina($event)"
           #tabela>
         <!--<p-column field="pessoa" header="Pessoa"></p-column> -->
-        <p-column header="Pessoa">
+        <p-column header="Nome da Pessoa">
           <ng-template let-lanc="rowData" pTemplate="body">
               <span>{{ lanc.pessoa.nome }}</span>
           </ng-template>
