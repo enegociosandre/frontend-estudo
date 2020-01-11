@@ -7,6 +7,7 @@ import { DataTableModule } from 'primeng/components/datatable/datatable';
 import { ButtonModule } from 'primeng/components/button/button';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { TooltipModule } from 'primeng/components/tooltip/tooltip';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { SharedModule } from './../shared/shared.module';
 import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
@@ -23,6 +24,7 @@ import { PessoasRoutingModule } from './pessoas-routing.module';
     DataTableModule,
     TooltipModule,
     InputMaskModule,
+    DropdownModule,
 
     SharedModule,
     PessoasRoutingModule
@@ -30,6 +32,7 @@ import { PessoasRoutingModule } from './pessoas-routing.module';
   declarations: [
     PessoaCadastroComponent,
     PessoasPesquisaComponent
+
   ],
   exports: []
 })

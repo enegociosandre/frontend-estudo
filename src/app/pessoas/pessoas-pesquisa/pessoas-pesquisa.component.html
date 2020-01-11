@@ -29,8 +29,19 @@
         (onLazyLoad)="aoMudarPagina($event)"
         #tabela>
           <p-column field="nome" header="Nome"></p-column>
-          <p-column field="endereco.cidade" header="Cidade"></p-column>
-          <p-column field="endereco.estado" header="Estado"></p-column>
+
+          <p-column header="Cidade">          
+	          <ng-template let-pes="rowData" pTemplate="body">
+              <span>{{ pes.endereco.cidade?.nome }}</span>
+            </ng-template>
+          </p-column>
+
+          <p-column header="Estado">          
+	          <ng-template let-pes="rowData" pTemplate="body">
+              <span>{{ pes.endereco.cidade?.estado.nome}}</span>
+            </ng-template>
+          </p-column>
+
           <p-column field="ativo" header="Status">
             <ng-template let-pes="rowData" pTemplate="body">
                 <a href="javascript:;"

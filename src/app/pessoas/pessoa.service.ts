@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Pessoa } from './../core/model';
+import { Pessoa, Estado, Cidade } from './../core/model';
 
 export class PessoaFiltro {
   nome: string;
@@ -14,9 +14,16 @@ export class PessoaFiltro {
 @Injectable()
 export class PessoaService {
 
-  pessoasUrl = 'http://localhost:8080/pessoas';
+  pessoasUrl: string;
+  cidadesUrl: string;
+  estadosUrl: string;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) { 
+
+    this.pessoasUrl = `http://localhost:8080/pessoas`;
+    this.estadosUrl = `http://localhost:8080/estados`;
+    this.cidadesUrl = `http://localhost:8080/cidades`;
+}
 
   pesquisar(filtro: PessoaFiltro): Promise<any> {
     const params = new URLSearchParams();
@@ -102,6 +109,21 @@ export class PessoaService {
     return this.http.get(`${this.pessoasUrl}/${codigo}`, { headers })
       .toPromise()
       .then(response => response.json() as Pessoa);
+  }
+
+  listarEstados(): Promise<Estado[]> {
+    return this.http.get(this.estadosUrl).toPromise()
+      .then(response => response.json());
+  }
+
+  pesquisarCidades(estado): Promise<Cidade[]> {
+    const params = new URLSearchParams();
+    params.set('estado', estado);
+
+    return this.http.get(this.cidadesUrl, {
+      search: params
+    }).toPromise()
+      .then(response => response.json());
   }
 
 }
