@@ -91,6 +91,12 @@
         </div>
 
       <div class="ui-g-12">
+        <p-panel header="Contatos">
+          <app-pessoa-cadastro-contato [contatos]="pessoa.contatos"></app-pessoa-cadastro-contato>
+        </p-panel>
+      </div>
+
+      <div class="ui-g-12">
         <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
         <button pButton type="button" label="Nova" class="ui-button-info"
           (click)="nova(f)"></button>
