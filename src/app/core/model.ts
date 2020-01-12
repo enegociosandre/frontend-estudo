@@ -47,6 +47,10 @@ export class Categoria {
   codigo: number;
 }
 
+export class Recorrencia {
+  codigo: number;
+}
+
 export class Lancamento {
   codigo: number;
   tipo = 'RECEITA';
@@ -56,5 +60,6 @@ export class Lancamento {
   valor: number;
   observacao: string;
   pessoa = new Pessoa();
+  recorrencia = new Recorrencia();
   categoria = new Categoria();
 }

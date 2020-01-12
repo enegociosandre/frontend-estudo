@@ -29,8 +29,6 @@ export class PessoaService {
     const params = new URLSearchParams();
     const headers = new Headers();
 
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
-
     params.set('page', filtro.pagina.toString());
     params.set('size', filtro.itensPorPagina.toString());
 
@@ -55,7 +53,6 @@ export class PessoaService {
 
   listarTodas(): Promise<any> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
 
     return this.http.get(this.pessoasUrl, { headers })
       .toPromise()
@@ -64,7 +61,6 @@ export class PessoaService {
 
   excluir(codigo: number): Promise<void> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
 
     return this.http.delete(`${this.pessoasUrl}/${codigo}`, { headers })
       .toPromise()
@@ -73,7 +69,6 @@ export class PessoaService {
 
   mudarStatus(codigo: number, ativo: boolean): Promise<void> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
     headers.append('Content-Type', 'application/json');
 
     return this.http.put(`${this.pessoasUrl}/${codigo}/ativo`, ativo, { headers })
@@ -83,7 +78,6 @@ export class PessoaService {
 
   adicionar(pessoa: Pessoa): Promise<Pessoa> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
     headers.append('Content-Type', 'application/json');
 
     return this.http.post(this.pessoasUrl, JSON.stringify(pessoa), { headers })
@@ -93,7 +87,6 @@ export class PessoaService {
 
   atualizar(pessoa: Pessoa): Promise<Pessoa> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
     headers.append('Content-Type', 'application/json');
 
     return this.http.put(`${this.pessoasUrl}/${pessoa.codigo}`,
@@ -104,7 +97,6 @@ export class PessoaService {
 
   buscarPorCodigo(codigo: number): Promise<Pessoa> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
 
     return this.http.get(`${this.pessoasUrl}/${codigo}`, { headers })
       .toPromise()

@@ -25,7 +25,7 @@ export class LancamentoService {
     const params = new URLSearchParams();
     const headers = new Headers();
 
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
 
     params.set('page', filtro.pagina.toString());
     params.set('size', filtro.itensPorPagina.toString());
@@ -62,7 +62,7 @@ export class LancamentoService {
 
   excluir(codigo: number): Promise<void> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
 
     return this.http.delete(`${this.lancamentosUrl}/${codigo}`, { headers })
       .toPromise()
@@ -71,7 +71,7 @@ export class LancamentoService {
 
   adicionar(lancamento: Lancamento): Promise<Lancamento> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
     headers.append('Content-Type', 'application/json');
 
     return this.http.post(this.lancamentosUrl,
@@ -82,7 +82,7 @@ export class LancamentoService {
 
   atualizar(lancamento: Lancamento): Promise<Lancamento> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
     headers.append('Content-Type', 'application/json');
 
     return this.http.put(`${this.lancamentosUrl}/${lancamento.codigo}`,
@@ -99,7 +99,7 @@ export class LancamentoService {
 
   buscarPorCodigo(codigo: number): Promise<Lancamento> {
     const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
 
     return this.http.get(`${this.lancamentosUrl}/${codigo}`, { headers })
       .toPromise()

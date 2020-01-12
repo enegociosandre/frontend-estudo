@@ -6,10 +6,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastyService } from 'ng2-toasty';
 
 import { ErrorHandlerService } from './../../core/error-handler.service';
+
 import { CategoriaService } from './../../categorias/categoria.service';
+import { RecorrenciaService } from './../../recorrencias/recorrencia.service';
 import { PessoaService } from './../../pessoas/pessoa.service';
 import { Lancamento } from './../../core/model';
 import { LancamentoService } from './../lancamento.service';
+
 
 @Component({
   selector: 'app-lancamento-cadastro',
@@ -24,11 +27,13 @@ export class LancamentoCadastroComponent implements OnInit {
   ];
 
   categorias = [];
+  recorrencias = [];
   pessoas = [];
   lancamento = new Lancamento();
 
   constructor(
     private categoriaService: CategoriaService,
+    private recorrenciaService: RecorrenciaService,
     private pessoaService: PessoaService,
     private lancamentoService: LancamentoService,
     private toasty: ToastyService,
@@ -46,7 +51,7 @@ export class LancamentoCadastroComponent implements OnInit {
     if (codigoLancamento) {
       this.carregarLancamento(codigoLancamento);
     }
-
+    this.carregarRecorrencias();
     this.carregarCategorias();
     this.carregarPessoas();
   }
@@ -100,6 +105,15 @@ export class LancamentoCadastroComponent implements OnInit {
       .then(categorias => {
         this.categorias = categorias
           .map(c => ({ label: c.nome, value: c.codigo }));
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  carregarRecorrencias() {
+     this.recorrenciaService.listarTodas()
+      .then(recorrencias => {
+        this.recorrencias = recorrencias
+          .map(re => ({ label: re.nome, value: re.codigo }));
       })
       .catch(erro => this.errorHandler.handle(erro));
   }
