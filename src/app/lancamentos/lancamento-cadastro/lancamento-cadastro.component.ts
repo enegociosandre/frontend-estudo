@@ -8,7 +8,7 @@ import { ToastyService } from 'ng2-toasty';
 import { ErrorHandlerService } from './../../core/error-handler.service';
 
 import { CategoriaService } from './../../categorias/categoria.service';
-import { RecorrenciaService } from './../../recorrencias/recorrencia.service';
+import { RecorrenciaService } from '../../recorrencias/recorrencia.service';
 import { PessoaService } from './../../pessoas/pessoa.service';
 import { Lancamento } from './../../core/model';
 import { LancamentoService } from './../lancamento.service';

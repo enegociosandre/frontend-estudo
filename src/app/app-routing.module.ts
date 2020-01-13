@@ -6,6 +6,7 @@ import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.compo
 const routes: Routes = [
   { path: 'lancamentos', loadChildren: 'app/lancamentos/lancamentos.module#LancamentosModule' },
   { path: 'pessoas', loadChildren: 'app/pessoas/pessoas.module#PessoasModule' },
+  { path: 'recorrencias', loadChildren: 'app/recorrencias/recorrencias.module#RecorrenciaModule' },
   { path: 'dashboard', loadChildren: 'app/dashboard/dashboard.module#DashboardModule'},
 
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

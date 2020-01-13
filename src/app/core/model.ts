@@ -49,6 +49,7 @@ export class Categoria {
 
 export class Recorrencia {
   codigo: number;
+  nome: string;
 }
 
 export class Lancamento {

@@ -10,7 +10,7 @@ import { ToastyModule } from 'ng2-toasty';
 
 import { ErrorHandlerService } from './error-handler.service';
 import { PessoaService } from './../pessoas/pessoa.service';
-import { RecorrenciaService } from './../recorrencias/recorrencia.service';
+import { RecorrenciaService } from '../recorrencias/recorrencia.service';
 import { LancamentoService } from './../lancamentos/lancamento.service';
 import { CategoriaService } from './../categorias/categoria.service';
 import { DashboardService } from './../dashboard/dashboard.service';
