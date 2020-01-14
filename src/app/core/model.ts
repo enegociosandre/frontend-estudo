@@ -3,6 +3,11 @@ export class Estado {
   nome: string;
 }
 
+export class FormaPagamento {
+  codigo: number;
+  nome: string;
+}
+
 export class Cidade {
   codigo: number;
   nome: string;

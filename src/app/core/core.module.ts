@@ -14,6 +14,7 @@ import { RecorrenciaService } from '../recorrencias/recorrencia.service';
 import { LancamentoService } from './../lancamentos/lancamento.service';
 import { CategoriaService } from './../categorias/categoria.service';
 import { DashboardService } from './../dashboard/dashboard.service';
+import { FormaPagamentoService } from './../forma-pagamento/forma-pagamento.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 
@@ -39,6 +40,7 @@ registerLocaleData(localePt);
     PessoaService,
     CategoriaService,
     DashboardService,
+    FormaPagamentoService,
     ErrorHandlerService,
 
     ConfirmationService,

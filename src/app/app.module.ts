@@ -9,6 +9,7 @@ import { PessoasModule } from './pessoas/pessoas.module';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { RecorrenciasModule } from './recorrencias/recorrencias.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { FormaPagamentoModule } from './forma-pagamento/forma-pagamento.module';
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -26,6 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
     DashboardModule,
     RecorrenciasModule,
     LancamentosModule,
+    FormaPagamentoModule,
     PessoasModule,
     AppRoutingModule
   ],
