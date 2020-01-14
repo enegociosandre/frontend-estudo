@@ -51,15 +51,15 @@ export class LancamentoCadastroComponent implements OnInit {
     if (codigoLancamento) {
       this.carregarLancamento(codigoLancamento);
     }
-    this.carregarRecorrencias();
     this.carregarCategorias();
+    this.carregarRecorrencias();
     this.carregarPessoas();
   }
-
+  
   get editando() {
     return Boolean(this.lancamento.codigo)
   }
-
+  
   carregarLancamento(codigo: number) {
     this.lancamentoService.buscarPorCodigo(codigo)
       .then(lancamento => {
@@ -113,7 +113,7 @@ export class LancamentoCadastroComponent implements OnInit {
      this.recorrenciaService.listarTodas()
       .then(recorrencias => {
         this.recorrencias = recorrencias
-          .map(re => ({ label: re.nome, value: re.codigo }));
+          .map(r => ({ label: r.nome, value: r.codigo }));
       })
       .catch(erro => this.errorHandler.handle(erro));
   }

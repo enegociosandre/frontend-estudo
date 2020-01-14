@@ -50,7 +50,7 @@ export class RecorrenciaService {
 
     return this.http.get(this.recorrenciasUrl, { headers })
       .toPromise()
-      .then(response => response.json());
+      .then(response => response.json().content);
   }
   
   excluir(codigo: number): Promise<void> {
