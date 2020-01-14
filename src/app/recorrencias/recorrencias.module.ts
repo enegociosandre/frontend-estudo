@@ -39,4 +39,4 @@ import { RecorrenciasRoutingModule } from './recorrencias-routing.module';
   ],
   exports: []
 })
-export class RecorrenciaModule { }
+export class RecorrenciasModule { }

@@ -67,7 +67,7 @@ export class RecorrenciaPesquisaComponent implements OnInit {
           this.grid.first = 0;
         }
 
-        this.toasty.success('Pesssoa excluída com sucesso!');
+        this.toasty.success('Recorrência excluída com sucesso!');
       })
       .catch(erro => this.errorHandler.handle(erro));
   }
