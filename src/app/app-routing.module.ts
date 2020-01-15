@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'lancamentos', loadChildren: 'app/lancamentos/lancamentos.module#LancamentosModule' },
   { path: 'pessoas', loadChildren: 'app/pessoas/pessoas.module#PessoasModule' },
   { path: 'recorrencias', loadChildren: 'app/recorrencias/recorrencias.module#RecorrenciasModule' },
+  { path: 'forma-pagamento', loadChildren: 'app/forma-pagamento/forma-pagamento.module#FormaPagamentoModule' },
   { path: 'dashboard', loadChildren: 'app/dashboard/dashboard.module#DashboardModule'},
 
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
