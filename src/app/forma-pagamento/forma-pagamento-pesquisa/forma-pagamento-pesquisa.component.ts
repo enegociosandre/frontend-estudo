@@ -14,9 +14,7 @@ import { FormaPagamentoService } from '../forma-pagamento.service';
   styleUrls: ['./forma-pagamento-pesquisa.component.css']
 })
 export class FormaPagamentoPesquisaComponent implements OnInit {
-
-  formaPagamento = [{"codigo":"1","nome":"veio do componente"}];
-  //formaPagamento = [];
+  formaPagamento = [];
   @ViewChild('tabela') grid;
 
   constructor(
@@ -34,10 +32,6 @@ export class FormaPagamentoPesquisaComponent implements OnInit {
   pesquisar() {
     this.formaPagamentoService.pesquisar()
       .then(resultado => { this.formaPagamento = resultado.formaPagamento
-        //this.formaPagamento = 
-        //resultado.map(formaPagamento=> ({ label: formaPagamento.codigo, value: formaPagamento.nome}));
-        //this.formaPagamento.map(resultado =>({label: formaPagamento.codigo, value: formaPagamento.nome}));
-        console.log("[Componente] Esse é o resultado: " + (resultado));
       })
       .catch(erro => {
         this.errorHandler.handle(erro)
