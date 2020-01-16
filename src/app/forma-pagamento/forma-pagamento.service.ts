@@ -10,7 +10,7 @@ import { FormaPagamento } from './../core/model';
 export class FormaPagamentoService {
     formaPagamentoUrl: string;
     constructor(private http: Http) { 
-        this.formaPagamentoUrl = `http://www.mocky.io/v2/5e1fbefc3000005f00d1ea1b`;
+        this.formaPagamentoUrl = `http://www.mocky.io/v2/5e1fc00d3000002900d1ea23`;
     }
     pesquisar(): Promise<any> {
         const headers = new Headers();    
