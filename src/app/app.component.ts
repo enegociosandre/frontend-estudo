@@ -12,5 +12,4 @@ export class AppComponent {
   constructor(private toastyConfig: ToastyConfig) {
     this.toastyConfig.theme = 'bootstrap';
   }
-
 }

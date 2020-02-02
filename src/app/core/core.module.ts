@@ -7,7 +7,7 @@ import localePt from '@angular/common/locales/pt';
 import { ConfirmationService } from 'primeng/components/common/api';
 import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
 import { ToastyModule } from 'ng2-toasty';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ErrorHandlerService } from './error-handler.service';
 import { PessoaService } from './../pessoas/pessoa.service';
 import { RecorrenciaService } from '../recorrencias/recorrencia.service';
@@ -23,6 +23,7 @@ registerLocaleData(localePt);
 @NgModule({
   imports: [
     CommonModule,
+    AngularFontAwesomeModule,
     RouterModule,
 
     ToastyModule.forRoot(),

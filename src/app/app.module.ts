@@ -11,6 +11,8 @@ import { RecorrenciasModule } from './recorrencias/recorrencias.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { FormaPagamentoModule } from './forma-pagamento/forma-pagamento.module';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
   ],
   imports: [
+    AngularFontAwesomeModule,
+    FontAwesomeModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,

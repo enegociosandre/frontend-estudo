@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-
 import { DashboardService } from './../dashboard.service';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faBoxes } from '@fortawesome/free-solid-svg-icons';
+import { faMoneyCheck } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -9,9 +13,16 @@ import { DashboardService } from './../dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  faUser = faUser;
+  faAddressCard = faAddressCard;
+  faBoxes = faBoxes;
+  faMoneyCheck = faMoneyCheck;
   pieChartData: any;
   lineChartData: any;
+  totalPessoas: any;
+  totalCategorias: any;
+  totalRecorrencias: any;
+  totalLancamentos: any;
 
   options = {
     tooltips: {
@@ -32,8 +43,14 @@ export class DashboardComponent implements OnInit {
     private decimalPipe: DecimalPipe) { }
 
   ngOnInit() {
+
     this.configurarGraficoPizza();
     this.configurarGraficoLinha();
+
+    this.getTotalPessoas();
+    this.getTotalCategorias();
+    this.getTotalRecorrencias();
+    this.getTotalLancamentos();
   }
 
   configurarGraficoPizza() {
@@ -51,6 +68,26 @@ export class DashboardComponent implements OnInit {
         };
       });
   }
+
+  getTotalPessoas() {
+    this.dashboardService.servicePessoas()
+      .then(retorno => { this.totalPessoas = retorno.total})
+  };
+
+  getTotalCategorias() {
+    this.dashboardService.serviceCategorias()
+      .then(retorno => { this.totalCategorias = retorno.total})
+  };
+
+  getTotalRecorrencias() {
+    this.dashboardService.serviceRecorrencias()
+      .then(retorno => { this.totalRecorrencias = retorno.total})
+  };
+
+  getTotalLancamentos() {
+    this.dashboardService.serviceLancamentos()
+      .then(retorno => { this.totalLancamentos = retorno.total})
+  };
 
   configurarGraficoLinha() {
     this.dashboardService.lancamentosPorDia()
